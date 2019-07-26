@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: httpecho
+  name: httpecho
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpecho
+  template:
+    metadata:
+      labels:
+        app: httpecho
+    spec:
+      containers:
+      - image: "grenlith/httpecho"
+        name: httpecho        
+        ports:
+        - containerPort: 1917

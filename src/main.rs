@@ -47,7 +47,7 @@ fn router() -> Router {
 }
 
 fn main() {
-    let addr = "0.0.0.0:8080";
+    let addr = "0.0.0.0:1917";
     println!("Listening for requests at http://{}", addr);
     gotham::start(addr, router())
 }
@@ -63,7 +63,7 @@ mod tests {
         let test_server = TestServer::new(router()).unwrap();
         let response = test_server
             .client()
-            .get("http://localhost:8080")
+            .get("http://localhost:1917")
             .perform()
             .unwrap();
 
@@ -78,7 +78,7 @@ mod tests {
         let test_server = TestServer::new(router()).unwrap();
         let response = test_server
             .client()
-            .post("http://localhost:8080", "communism will win", mime::TEXT_PLAIN)
+            .post("http://localhost:1917", "communism will win", mime::TEXT_PLAIN)
             .perform()
             .unwrap();
         

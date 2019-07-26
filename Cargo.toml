@@ -1,5 +1,5 @@
 [package]
-name = "echo"
+name = "httpecho"
 version = "0.1.0"
 authors = ["grenlith <corinne@grenlith.io>"]
 edition = "2018"
@@ -10,4 +10,4 @@ edition = "2018"
 gotham = "0.4.0"
 hyper = "0.12"
 mime = "0.3"
-futures = "*"
+futures = "0.1.28"
