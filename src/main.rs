@@ -78,13 +78,13 @@ mod tests {
         let test_server = TestServer::new(router()).unwrap();
         let response = test_server
             .client()
-            .post("http://localhost:1917", "communism will win", mime::TEXT_PLAIN)
+            .post("http://localhost:1917", "will you echo this back", mime::TEXT_PLAIN)
             .perform()
             .unwrap();
         
         assert_eq!(response.status(), StatusCode::OK);
 
         let body = response.read_body().unwrap();
-        assert_eq!(&body[..], b"communism will win");
+        assert_eq!(&body[..], b"will you echo this back");
     }
 }
